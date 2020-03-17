@@ -1,4 +1,10 @@
 <?php
+
+if ($_COOKIE["login"] = false) {
+    header("refresh: 0; url=login.php");
+    exit("You are not logged in. Going bacc.");
+}
+
 //connectie
 $host="localhost";
 $db = "netland";

@@ -1,4 +1,7 @@
 <?php
+
+setcookie("login", false, time() + 3600);
+
 $host="localhost";
 $db = "netland";
 $username = "root";
@@ -24,6 +27,7 @@ if (isset($_POST["login"])) {
     foreach ($informatie as $row) {
         if ($row["username"] === $usernameInput && $row["password"] === $passwordInput) {
             header("refresh: 0; url=index.php");
+            $_COOKIE["login"] = true;
             exit("You are being logged in!");
         } else {
             echo "N O P E";
